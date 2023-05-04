@@ -10,7 +10,8 @@ const sass = gulpSass(defaultSass)
 export const styles = () => {
     return app.gulp.src(app.path.src.styles, { sourcemap: app.isDev })
         .pipe(sass({
-            outputStyle: 'expanded'
+            outputStyle: 'expanded',
+            includePaths: ['node_modules']
         }))
         .pipe(
             app.plugins.gulpIf(app.isBuild, groupCssMediaQueries())
