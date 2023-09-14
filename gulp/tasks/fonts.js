@@ -10,7 +10,7 @@ export const otfToTtf = () => {
         .pipe(app.gulp.dest(`${app.path.scrFolder}/assets/fonts/`))
 }
 export const ttfToWoff = () => {
-    return app.gulp.src(`${app.path.scrFolder}/assets/fonts/*.ttf`)
+    return app.gulp.src(`${app.path.scrFolder}/assets/fonts/*.{ttf,woff}`)
         .pipe(ttf2woff2())
         .pipe(app.gulp.dest(app.path.build.fonts))
 }
